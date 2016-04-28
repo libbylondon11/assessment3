@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="heroApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Hero Tracker</title>
+    <script src="/vendor/angular/angular.min.js" type="text/javascript"></script>
+    <script src="/assets/scripts/client.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css"/>
+  </head>
+  <body ng-controller="HeroController as parent">
+    <div class="container">
+      <h2> Hero Tracker</h2>
+      <div class="well">
+        <ul style="list-style-type: none"
+        <li>
+          Alias(name): <input type="text" ng-model="parent.hero.alias"/>
+        </li>
+        <li>
+        First Name: <input type="text" ng-model="parent.hero.first_name"/>
+      </li>
+      <li>
+        Last Name: <input type="text" ng-mode="parent.hero.last_name"/>
+      </li>
+      <li>
+        City: <input type="text" ng-model="parent.hero.city"/>
+      </li>
+      <li>
+        Power Name: <input type="text" ng-mode="parent.hero.power_name"/>
+      </li>
+    </ul>
+    <!-- <div class="submit text-center"> -->
+    <button class="text-center submit" ng-click="parent.add()">Submit Hero!</button>
+    <select ng-model="answer" ng-options="blah for blah in options"></select>
+  <!-- </div> -->
+  <div class ng-repeat="hero in parent.heroes">
+    <h1> Heroes List! </h1>
+    <div class="row inline-block-row">
+      <div class="well">
+        <div>Alias: {{hero.alias}}</div>
+        First Name: {{hero.first_name}}
+        Last Name: {{hero.last_name}}
+        City: {{hero.city}}
+        Power Name: {{hero.power_name}}
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+</html>
